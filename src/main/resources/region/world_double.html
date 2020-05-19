@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <script src="world.js"></script>
+</head>
+<body>
+<!-- 下面是整个图的大小 -->
+<div id="main" style="width: 4800px;height:2320px;"></div>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+
+    deadData = [
+        {name: "China", value: 3340},
+{name: "Korea", value: 192},
+{name: "Japan", value: 80},
+{name: "Singapore", value: 6},
+{name: "Malaysia", value: 62},
+{name: "Australia", value: 42},
+{name: "Vietnam", value: 0},
+{name: "Philippines", value: 163},
+{name: "Cambodia", value: 0},
+{name: "New Zealand", value: 1},
+{name: "Brunei", value: 1},
+{name: "Mongolia", value: 0},
+{name: "Fiji", value: 0},
+{name: "Lao PDR", value: 0},
+{name: "Papua New Guinea", value: 0},
+{name: "Guam", value: 4},
+{name: "New Caledonia", value: 0},
+{name: "Italy", value: 16525},
+{name: "France", value: 8896},
+{name: "Germany", value: 1607},
+{name: "Spain", value: 13055},
+{name: "United Kingdom", value: 5373},
+{name: "Sweden", value: 477},
+{name: "Switzerland", value: 715},
+{name: "Austria", value: 220},
+{name: "Norway", value: 59},
+{name: "Greece", value: 79},
+{name: "Israel", value: 52},
+{name: "Croatia", value: 16},
+{name: "Finland", value: 28},
+{name: "Russia", value: 47},
+{name: "Belarus", value: 13},
+{name: "Lithuania", value: 14},
+{name: "Netherlands", value: 1867},
+{name: "Macedonia", value: 21},
+{name: "Romania", value: 157},
+{name: "Belgium", value: 1632},
+{name: "Azerbaijan", value: 7},
+{name: "Denmark", value: 187},
+{name: "Estonia", value: 19},
+{name: "Ireland", value: 174},
+{name: "Georgia", value: 2},
+{name: "Iceland", value: 6},
+{name: "Armenia", value: 8},
+{name: "Luxembourg", value: 41},
+{name: "Portugal", value: 311},
+{name: "Andorra", value: 21},
+{name: "Latvia", value: 1},
+{name: "Poland", value: 107},
+{name: "Ukraine", value: 45},
+{name: "Bosnia and Herz.", value: 28},
+{name: "Hungary", value: 47},
+{name: "Slovenia", value: 30},
+{name: "Liechtenstein", value: 1},
+{name: "Serbia", value: 58},
+{name: "Slovakia", value: 2},
+{name: "Malta", value: 0},
+{name: "Bulgaria", value: 22},
+{name: "Moldova", value: 19},
+{name: "Albania", value: 22},
+{name: "Cyprus", value: 14},
+{name: "Turkey", value: 649},
+{name: "Kazakhstan", value: 6},
+{name: "Uzbekistan", value: 2},
+{name: "Montenegro", value: 2},
+{name: "Kyrgyzstan", value: 4},
+{name: "Jersey", value: 3},
+{name: "Greenland", value: 0},
+{name: "Isle of Man", value: 1},
+{name: "Thailand", value: 26},
+{name: "India", value: 109},
+{name: "Indonesia", value: 209},
+{name: "Nepal", value: 0},
+{name: "Sri Lanka", value: 5},
+{name: "Bhutan", value: 0},
+{name: "Bangladesh", value: 12},
+{name: "Myanmar", value: 1},
+{name: "Timor-Leste", value: 0},
+{name: "Iran", value: 3739},
+{name: "Kuwait", value: 1},
+{name: "Bahrain", value: 4},
+{name: "United Arab Emirates", value: 11},
+{name: "Iraq", value: 64},
+{name: "Oman", value: 2},
+{name: "Lebanon", value: 19},
+{name: "Pakistan", value: 54},
+{name: "Afghanistan", value: 11},
+{name: "Egypt", value: 85},
+{name: "Qatar", value: 4},
+{name: "Jordan", value: 6},
+{name: "Morocco", value: 83},
+{name: "Saudi Arabia", value: 38},
+{name: "Tunisia", value: 22},
+{name: "Somalia", value: 0},
+{name: "Sudan", value: 2},
+{name: "Djibouti", value: 0},
+{name: "Syria", value: 2},
+{name: "Libya", value: 1},
+{name: "Palestine", value: 1},
+{name: "United States", value: 9559},
+{name: "Canada", value: 293},
+{name: "Mexico", value: 94},
+{name: "Brazil", value: 486},
+{name: "Ecuador", value: 191},
+{name: "Argentina", value: 46},
+{name: "Chile", value: 37},
+{name: "Dominican Rep.", value: 86},
+{name: "Colombia", value: 35},
+{name: "Peru", value: 83},
+{name: "Costa Rica", value: 2},
+{name: "Paraguay", value: 5},
+{name: "Panama", value: 54},
+{name: "Bolivia", value: 11},
+{name: "Jamaica", value: 3},
+{name: "Venezuela", value: 3},
+{name: "Honduras", value: 22},
+{name: "Guatemala", value: 3},
+{name: "Uruguay", value: 6},
+{name: "Cuba", value: 9},
+{name: "Trinidad and Tobago", value: 8},
+{name: "Guyana", value: 4},
+{name: "Saint Lucia", value: 0},
+{name: "Antigua and Barb.", value: 0},
+{name: "St. Vin. and Gren.", value: 0},
+{name: "Suriname", value: 1},
+{name: "Barbados", value: 1},
+{name: "El Salvador", value: 3},
+{name: "Haiti", value: 1},
+{name: "Dominica", value: 0},
+{name: "Belize", value: 1},
+{name: "Nicaragua", value: 1},
+{name: "Grenada", value: 0},
+{name: "Montserrat", value: 0},
+{name: "Puerto Rico", value: 21},
+{name: "Bermuda", value: 0},
+{name: "Algeria", value: 173},
+{name: "Nigeria", value: 5},
+{name: "Senegal", value: 2},
+{name: "Cameroon", value: 9},
+{name: "South Africa", value: 12},
+{name: "Togo", value: 3},
+{name: "Burkina Faso", value: 17},
+{name: "Dem. Rep. Congo", value: 18},
+{name: "Rwanda", value: 0},
+{name: "Ghana", value: 5},
+{name: "Ethiopia", value: 1},
+{name: "Seychelles", value: 0},
+{name: "Kenya", value: 4},
+{name: "Namibia", value: 0},
+{name: "Benin", value: 1},
+{name: "Central African Rep.", value: 0},
+{name: "Congo", value: 5},
+{name: "Eq. Guinea", value: 0},
+{name: "Gabon", value: 1},
+{name: "Guinea", value: 0},
+{name: "Liberia", value: 3},
+{name: "Mauritania", value: 1},
+{name: "Tanzania", value: 1},
+{name: "Mauritius", value: 7},
+{name: "Zambia", value: 1},
+{name: "Madagascar", value: 0},
+{name: "Uganda", value: 0},
+{name: "Mozambique", value: 0},
+{name: "Eritrea", value: 0},
+{name: "Cape Verde", value: 1},
+{name: "Chad", value: 0},
+{name: "Angola", value: 2},
+{name: "Guinea-Bissau", value: 0},
+{name: "Mali", value: 4},
+{name: "Niger", value: 10},
+{name: "Zimbabwe", value: 1},
+{name: "Sierra Leone", value: 0},
+{name: "Botswana", value: 1},
+{name: "Malawi", value: 0},
+{name: "Burundi", value: 0},
+{name: "S. Sudan", value: 0},
+
+    ];
+
+    //先纬度，再经度
+
+    var capitals =
+    "39.55,116.23,China\n" +
+    "37.35,127.03,Korea\n" +
+    "39,125.47,Korea (North)\n" +
+    "35.41,139.44,Japan\n" +
+    "3.08,101.42,Malaysia\n" +
+    "28.37,77.13,India\n" +
+    "33.4,73.08,Pakistan\n" +
+    "13.5,100.29,Thailand\n" +
+    "21.01,105.53,Vietnam\n" +
+    "6.55,79.52,Sri Lanka\n" +
+    "19.406,96.425,Myanmar\n" +
+    "23.51,90.24,Bangladesh\n" +
+    "27.29,89.4,Bhutan\n" +
+    "34.3,69.1,Afghanistan\n" +
+    "11.35,104.55,Cambodia\n" +
+    "27.42,85.19,Nepal\n" +
+    "18.01,102.48,Lao PDR\n" +
+    "31.47,35.13,Israel\n" +
+    "15.23,44.14,Yemen\n" +
+    "14.37,121,Philippines\n" +
+    "1.22,103.45,Singapore\n" +
+    "4.1,73.28,Maldives\n" +
+    "-8.35,125.35,Timor-Leste\n" +
+    "-6.08,106.45,Indonesia\n" +
+    "33.14,44.22,Iraq\n" +
+    "35.45,51.3,Iran\n" +
+    "31.57,35.56,Jordan\n" +
+    "24.39,46.44,Saudi Arabia\n" +
+    "24.27,54.23,United Arab Emirates\n" +
+    "23.36,58.37,Oman\n" +
+    "26.12,50.36,Bahrain\n" +
+    "33.3,36.19,Syria\n" +
+    "31.47,35.13,Palestine\n" +
+    "25.15,51.34,Qatar\n" +
+    "33.52,35.3,Lebanon\n" +
+    "47.55,106.53,Mongolia\n" +
+    "40.02,32.54,Turkey\n" +
+    "51.1,71.3,Kazakhstan\n" +
+    "41.16,69.13,Uzbekistan\n" +
+    "42.53,74.46,Kyrgyzstan\n" +
+    "38.38,68.51,Tajikistan\n" +
+    "37.58,58.24,Turkmenistan\n" +
+    "40.22,49.53,Azerbaijan\n" +
+    "41.43,44.48,Georgia\n" +
+    "35.11,33.23,Cyprus\n" +
+    "42.59,81.14,United Kingdom\n" +
+    "44.23,26.1,Romania\n" +
+    "48.51,2.2,France\n" +
+    "52.15,21,Poland\n" +
+    "46.57,7.26,Switzerland\n" +
+    "59.23,18,Sweden\n" +
+    "41.52,12.37,Italy\n" +
+    "52.31,13.2,Germany\n" +
+    "43.4,7.25,Monaco\n" +
+    "56.53,24.05,Latvia\n" +
+    "38.02,23.44,Greece\n" +
+    "41.2,19.48,Albania\n" +
+    "59.56,10.41,Norway\n" +
+    "44.49,20.28,Serbia\n" +
+    "42.43,23.2,Bulgaria\n" +
+    "59.22,24.48,Estonia\n" +
+    "54.4,25.19,Lithuania\n" +
+    "52.21,4.52,Netherlands\n" +
+    "53.26,-6.15,Ireland\n" +
+    "50.05,14.25,Czech\n" +
+    "48.09,17.07,Slovakia\n" +
+    "38.42,-9.05,Portugal\n" +
+    "46.03,14.31,Slovenia\n" +
+    "41.35,21.3,Macedonia\n" +
+    "45.49,15.58,Croatia\n" +
+    "41.54,12.27,Vatican City\n" +
+    "50.51,4.21,Belgium\n" +
+    "35.53,14.31,Malta\n" +
+    "55.43,12.34,Denmark\n" +
+    "43.52,18.26,Bosnia and Herzegovina\n" +
+    "40.26,3.42,Spain\n" +
+    "43.55,12.28,San Marino\n" +
+    "47.26,19.15,Hungary\n" +
+    "47.09,9.31,Liechtenstein\n" +
+    "64.09,-21.58,Iceland\n" +
+    "60.1,24.53,Finland\n" +
+    "55.45,37.37,Russia\n" +
+    "48.13,16.22,Austria\n" +
+    "50.28,30.29,Ukraine\n" +
+    "53.51,27.3,Belarus\n" +
+    "47,28.5,Moldova\n" +
+    "42.27,19.28,Montenegro\n" +
+    "35.11,33.23,Cyprus\n" +
+    "-8.5,13.2,Angola\n" +
+    "9.03,38.42,Ethiopia\n" +
+    "30,31.17,Egypt\n" +
+    "4.23,18.37,Central African Rep.\n" +
+    "11.52,-15.39,Guinea-Bissau\n" +
+    "-24.45,25.55,Botswana\n" +
+    "12.2,1.4,Burkina Faso\n" +
+    "-18.55,47.31,Madagascar\n" +
+    "12.4,-7.59,Mali\n" +
+    "-13.58,33.49,Malawi\n" +
+    "3.45,8.48,Equatorial Guinea\n" +
+    "13.28,-16.39,Gambia\n" +
+    "6.3,2.47,Benin\n" +
+    "-20.09,57.29,Mauritius\n" +
+    "18,-15.58,Mauritania\n" +
+    "0.19,32.35,Uganda\n" +
+    "48.25,123.21,Seychelles\n" +
+    "34.02,-6.51,Morocco\n" +
+    "-3.22,29.21,Burundi\n" +
+    "-1.59,30.05,Rwanda\n" +
+    "12.1,14.59,Chad\n" +
+    "13.32,2.05,Niger\n" +
+    "9.12,7.11,Nigeria\n" +
+    "5.33,0.15,Ghana\n" +
+    "0.3,9.25,Gabon\n" +
+    "0.2,6.44,Sao Tome and Principe\n" +
+    "-2.43,21.07,Dem. Rep. Congo\n" +
+    "6.1,1.21,Togo\n" +
+    "32.58,13.12,Libya\n" +
+    "6.2,-10.46,Liberia\n" +
+    "14.55,-23.31,Cape Verde\n" +
+    "36.42,3.13,Algeria\n" +
+    "-22.34,17.06,Namibia\n" +
+    "15.2,38.58,Eritrea\n" +
+    "26.19,31.08,Swaziland\n" +
+    "-15.2,28.14,Zambia\n" +
+    "-6.51,39.18,Tanzania\n" +
+    "1.17,36.49,Kenya\n" +
+    "11.4,43.19,Comoros\n" +
+    "-17.49,31.04,Zimbabwe\n" +
+    "36.47,10.1,Tunisia\n" +
+    "29.18,27.28,Lesotho\n" +
+    "-25.58,32.35,Mozambique\n" +
+    "2.02,45.21,Somalia\n" +
+    "6.51,5.18,Cote D’Ivoire\n" +
+    "3.51,11.31,Cameroon\n" +
+    "14.38,-17.27,Senegal\n" +
+    "38.53,-77.02,United States\n" +
+    "45.25,-75.43,Canada\n" +
+    "-12.06,-76.55,Peru\n" +
+    "18.32,-72.2,Haiti\n" +
+    "13.4,-89.1,El Salvador\n" +
+    "-33.27,-70.4,Chile\n" +
+    "23.08,-82.23,Cuba\n" +
+    "12.06,-86.18,Nicaragua\n" +
+    "25.03,-77.2,Bahamas\n" +
+    "-16.3,-68.09,Bolivia\n" +
+    "12.04,-61.44,Grenada\n" +
+    "-25.15,-57.4,Paraguay\n" +
+    "-15.45,-47.57,Brazil\n" +
+    "14.05,-87.14,Honduras\n" +
+    "-0.14,-78.3,Ecuador\n" +
+    "17.12,-77.14,Jamaica\n" +
+    "-34.53,-56.11,Uruguay\n" +
+    "13.06,-59.37,Barbados\n" +
+    "14.01,-60.59,Saint Lucia\n" +
+    "6.46,-58.1,Guyana\n" +
+    "18.3,-69.57,Dominican Rep.\n" +
+    "19.28,-99.09,Mexico\n" +
+    "-34.2,-58.3,Argentina\n" +
+    "10.3,-66.58,Venezuela\n" +
+    "45.16,66.03,Antigua and Barbuda\n" +
+    "5.52,-55.14,Suriname\n" +
+    "17.25,-88.46,Belize\n" +
+    "9.59,-84.04,Costa Rica\n" +
+    "10.38,-61.31,Trinidad and Tobago\n" +
+    "-35.18,149.08,Australia\n" +
+    "-41.17,174.47,New Zealand\n" +
+    "-18.08,178.25,Fiji\n" +
+    "21.07,175.12,Tonga\n" +
+    "-9.3,147.07,Papua New Guinea\n" +
+    "9.32,160.12,Solomon Islands\n" +
+    "7.09,171.12,Marshall Islands\n" +
+    "17.32,149.34,French Polynesia\n" +
+    "27.09,13.12,Western Sahara\n" +
+    "14.16,170.42,American Samoa\n" +
+    "4.55,52.18,Franch Guiana\n"+
+    "-25.43,28.11,South Africa\n"+
+    "8.57,-79.3,Panama\n"+
+    "4.36,-70.04,Colombia\n"
+    + "12,42.5,Djibouti\n"
+    +"64.1,-51.4,Greenland\n"
+    +"-22.17,166.30,New Caledonia\n"
+    +"15.31,32.35,Sudan\n"
+    +"-4.09,15.12,Congo\n"
+    +"18.28,-66.07,Puerto Rico\n"
+    +"14.40,-90.22,Guatemala\n"
+    +"7,30,S. Sudan\n"
+    +"8.31,-13.15,Sierra Leone\n"
+
+
+    // +"20.48486328125,-57.65126953125002,Montserrat\n"
+    ;
+
+    var capitalList= capitals.split("\n");
+    var geoCapital = {};
+    for(var i=0;i<capitalList.length;i++){
+        var c = capitalList[i].split(",");
+        geoCapital[c[2]] = [c[1],c[0]];
+    }
+
+    var mapName = 'world';
+
+    var geoCoordMap = {};
+    /*获取地图数据*/
+    myChart.showLoading();
+    var mapFeatures = echarts.getMap(mapName).geoJson.features;
+    myChart.hideLoading();
+    mapFeatures.forEach(function (v) {
+        // 地区名称
+        var name = v.properties.name;
+        // 地区经纬度
+        geoCoordMap[name] = v.properties.cp;
+
+    });
+
+
+    var max = 4000,
+        min = 0; // todo
+    var maxSize4Pin = 200,
+        minSize4Pin = 50;
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value),
+                });
+            }else {
+                var g = geoCapital[data[i].name];
+                if(g){
+                    res.push({
+                        name: data[i].name,
+                        value: g.concat(data[i].value)
+                    });
+                }
+            }
+        }
+        return res;
+    };
+
+    option = {
+        title: {
+            sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+            left: 'center',
+            top: 'top'
+        },
+        textStyle: {
+            fontFamily: "Times New Roman"
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                var value = (params.value + '').split('.');
+                value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+                    + '.' + value[1];
+                return params.seriesName + '<br/>' + params.name + ' : ' + value;
+            }
+        },
+        toolbox: {
+            show: true,
+            orient: 'horizontal',
+            left: 'right',
+            top: 'top',
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                restore: {show: true},
+                saveAsImage: {
+                    // type:'png',
+                    show: true,
+                    pixelRatio: 4
+                }
+            }
+        },
+        visualMap: {
+            // min: 0,
+            // max: 9999999999,
+            // show : true,
+            // text:['High','Low'],
+            // realtime: false,
+            // calculable: true,
+            // color: ['orangered','yellow','lightskyblue']
+            precision: 0,
+            //图例单个高度
+            itemHeight: 80,
+            //图例单个宽度
+            itemWidth: 150,
+            //图例字体大小
+            textStyle: {fontSize: 70},
+            align: 'left',
+            orient: 'vertical',
+
+            show: true,
+            //图例位置
+            x: '580',
+            y: '1400',
+            splitList: [
+                // {start: 0, end:500},{start: 500, end: 1000},
+                // {start: 1000, end:1500},{start: 1500, end: 2000},{start: 2000, end: 2500},
+                // {start: 2500, end: 3000},{start: 3500, end: 5000000},
+                // {start: 5000000, end: 200000},
+{start: 0, end:0},{start: 1, end:1000},{start: 1000, end:5000},{start:5000, end:10000},{start: 10000, end:50000},{start: 50000, end:100000},{start: 100000, end:400000},
+            ],
+            //color: ['orangered','yellow','lightskyblue']
+             color: ['#7f1100',
+                    '#ff5428',
+                    '#ff8c71',
+                    '#ffd768',
+                    'rgb(240, 214, 173)',
+                    'rgb(238,238,238)']
+
+            ,
+            seriesIndex: [1]
+        },
+        geo: {
+            show: true,
+            map: mapName,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#939998',
+                    borderColor: '#3B5077'
+                },
+                emphasis: {
+                    areaColor: '#2B91B7'
+                }
+            }
+        },
+        series: [
+            {
+                name: '散点',
+                type: 'scatter',
+                symbol: 'pin',
+                coordinateSystem: 'geo',
+                data: convertData(deadData),
+                symbolSize: function (val) {
+                    var a = maxSize4Pin/ max;
+
+                    console.log(val);
+                    console.log(val[0]+" "+val[2]+" "+a * val[2]);
+                    var size = a * val[2]+minSize4Pin;
+
+                    if(size>maxSize4Pin){
+                        return maxSize4Pin;
+                    }
+                    if(size<=minSize4Pin){
+                        return minSize4Pin;
+                    }
+
+
+                    return size;
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            color: '#ffffff',
+                            fontSize: 20
+                        },
+                        formatter:function (val) {
+                            return val.data.value[2]
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#6b78f0'
+                    }
+                }
+            },
+            {
+                name: 'World',
+                type: 'map',
+                mapType: mapName,
+                roam: true,
+                zoom: 1,
+                itemStyle: {
+                    emphasis: {label: {show: true}}
+                },
+                data: [
+                    {name: "China", value: 83071},
+{name: "Korea", value: 10331},
+{name: "Japan", value: 3906},
+{name: "Singapore", value: 1375},
+{name: "Malaysia", value: 3793},
+{name: "Australia", value: 5844},
+{name: "Vietnam", value: 245},
+{name: "Philippines", value: 3660},
+{name: "Cambodia", value: 115},
+{name: "New Zealand", value: 943},
+{name: "Brunei", value: 135},
+{name: "Mongolia", value: 15},
+{name: "Fiji", value: 14},
+{name: "Lao PDR", value: 12},
+{name: "Papua New Guinea", value: 1},
+{name: "Guam", value: 113},
+{name: "New Caledonia", value: 18},
+{name: "Italy", value: 132547},
+{name: "France", value: 73488},
+{name: "Germany", value: 99225},
+{name: "Spain", value: 135032},
+{name: "United Kingdom", value: 51612},
+{name: "Sweden", value: 7206},
+{name: "Switzerland", value: 21574},
+{name: "Austria", value: 12297},
+{name: "Norway", value: 5755},
+{name: "Greece", value: 1755},
+{name: "Israel", value: 8611},
+{name: "Croatia", value: 1222},
+{name: "Finland", value: 2176},
+{name: "Russia", value: 6343},
+{name: "Belarus", value: 700},
+{name: "Lithuania", value: 843},
+{name: "Netherlands", value: 18803},
+{name: "Macedonia", value: 570},
+{name: "Romania", value: 4057},
+{name: "Belgium", value: 20814},
+{name: "Azerbaijan", value: 641},
+{name: "Denmark", value: 4681},
+{name: "Estonia", value: 1108},
+{name: "Ireland", value: 5364},
+{name: "Georgia", value: 195},
+{name: "Iceland", value: 1562},
+{name: "Armenia", value: 833},
+{name: "Luxembourg", value: 2843},
+{name: "Portugal", value: 11730},
+{name: "Andorra", value: 540},
+{name: "Latvia", value: 542},
+{name: "Poland", value: 4413},
+{name: "Ukraine", value: 1462},
+{name: "Bosnia and Herz.", value: 695},
+{name: "Hungary", value: 817},
+{name: "Slovenia", value: 1021},
+{name: "Liechtenstein", value: 78},
+{name: "Serbia", value: 2200},
+{name: "Slovakia", value: 534},
+{name: "Malta", value: 241},
+{name: "Bulgaria", value: 549},
+{name: "Moldova", value: 965},
+{name: "Albania", value: 377},
+{name: "Cyprus", value: 465},
+{name: "Turkey", value: 30217},
+{name: "Kazakhstan", value: 670},
+{name: "Uzbekistan", value: 472},
+{name: "Montenegro", value: 223},
+{name: "Kyrgyzstan", value: 228},
+{name: "Jersey", value: 155},
+{name: "Greenland", value: 11},
+{name: "Isle of Man", value: 127},
+{name: "Thailand", value: 2220},
+{name: "India", value: 4067},
+{name: "Indonesia", value: 2491},
+{name: "Nepal", value: 9},
+{name: "Sri Lanka", value: 176},
+{name: "Bhutan", value: 5},
+{name: "Bangladesh", value: 123},
+{name: "Myanmar", value: 21},
+{name: "Timor-Leste", value: 1},
+{name: "Iran", value: 60500},
+{name: "Kuwait", value: 665},
+{name: "Bahrain", value: 756},
+{name: "United Arab Emirates", value: 2076},
+{name: "Iraq", value: 1031},
+{name: "Oman", value: 371},
+{name: "Lebanon", value: 541},
+{name: "Pakistan", value: 3864},
+{name: "Afghanistan", value: 367},
+{name: "Egypt", value: 1322},
+{name: "Qatar", value: 1832},
+{name: "Jordan", value: 349},
+{name: "Morocco", value: 1141},
+{name: "Saudi Arabia", value: 2752},
+{name: "Tunisia", value: 596},
+{name: "Somalia", value: 7},
+{name: "Sudan", value: 14},
+{name: "Djibouti", value: 90},
+{name: "Syria", value: 19},
+{name: "Libya", value: 18},
+{name: "Palestine", value: 254},
+{name: "United States", value: 333811},
+{name: "Canada", value: 15806},
+{name: "Mexico", value: 2143},
+{name: "Brazil", value: 11130},
+{name: "Ecuador", value: 3747},
+{name: "Argentina", value: 1554},
+{name: "Chile", value: 4815},
+{name: "Dominican Rep.", value: 1828},
+{name: "Colombia", value: 1485},
+{name: "Peru", value: 2281},
+{name: "Costa Rica", value: 454},
+{name: "Paraguay", value: 113},
+{name: "Panama", value: 1988},
+{name: "Bolivia", value: 183},
+{name: "Jamaica", value: 58},
+{name: "Venezuela", value: 159},
+{name: "Honduras", value: 298},
+{name: "Guatemala", value: 70},
+{name: "Uruguay", value: 406},
+{name: "Cuba", value: 350},
+{name: "Trinidad and Tobago", value: 105},
+{name: "Guyana", value: 29},
+{name: "Saint Lucia", value: 14},
+{name: "Antigua and Barb.", value: 15},
+{name: "St. Vin. and Gren.", value: 7},
+{name: "Suriname", value: 10},
+{name: "Barbados", value: 56},
+{name: "El Salvador", value: 69},
+{name: "Haiti", value: 24},
+{name: "Dominica", value: 14},
+{name: "Belize", value: 7},
+{name: "Nicaragua", value: 6},
+{name: "Grenada", value: 12},
+{name: "Montserrat", value: 6},
+{name: "Puerto Rico", value: 513},
+{name: "Bermuda", value: 37},
+{name: "Algeria", value: 1423},
+{name: "Nigeria", value: 232},
+{name: "Senegal", value: 226},
+{name: "Cameroon", value: 555},
+{name: "South Africa", value: 1686},
+{name: "Togo", value: 44},
+{name: "Burkina Faso", value: 345},
+{name: "Dem. Rep. Congo", value: 161},
+{name: "Rwanda", value: 104},
+{name: "Ghana", value: 214},
+{name: "Ethiopia", value: 43},
+{name: "Seychelles", value: 11},
+{name: "Kenya", value: 142},
+{name: "Namibia", value: 16},
+{name: "Benin", value: 23},
+{name: "Central African Rep.", value: 9},
+{name: "Congo", value: 45},
+{name: "Eq. Guinea", value: 16},
+{name: "Gabon", value: 21},
+{name: "Guinea", value: 111},
+{name: "Liberia", value: 14},
+{name: "Mauritania", value: 6},
+{name: "Tanzania", value: 24},
+{name: "Mauritius", value: 244},
+{name: "Zambia", value: 39},
+{name: "Madagascar", value: 77},
+{name: "Uganda", value: 52},
+{name: "Mozambique", value: 10},
+{name: "Eritrea", value: 29},
+{name: "Cape Verde", value: 7},
+{name: "Chad", value: 9},
+{name: "Angola", value: 16},
+{name: "Guinea-Bissau", value: 33},
+{name: "Mali", value: 39},
+{name: "Niger", value: 184},
+{name: "Zimbabwe", value: 9},
+{name: "Sierra Leone", value: 6},
+{name: "Botswana", value: 6},
+{name: "Malawi", value: 4},
+{name: "Burundi", value: 3},
+{name: "S. Sudan", value: 1},
+
+                ]
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

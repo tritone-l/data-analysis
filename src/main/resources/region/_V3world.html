@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <script src="world.js"></script>
+</head>
+<body>
+<!-- 下面是整个图的大小 -->
+<div id="main" style="width: 4800px;height:2320px;"></div>
+<script>
+	 var myChart = echarts.init(document.getElementById('main'));
+		option = {
+    title: {
+        sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+        left: 'center',
+        top: 'top'
+    },
+    textStyle:{
+            fontFamily:"Times New Roman"
+        },
+    tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            var value = (params.value + '').split('.');
+            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+                    + '.' + value[1];
+            return params.seriesName + '<br/>' + params.name + ' : ' + value;
+        }
+    },
+   toolbox: {
+    show : true,
+    orient : 'horizontal',
+    left: 'right',
+    top: 'top',
+    feature : {
+        mark : {show: true},
+        dataView : {show: true, readOnly: false},
+        restore : {show: true},
+        saveAsImage : {
+          // type:'png',
+            show: true,
+            pixelRatio:4
+        }
+    }
+},
+    visualMap: {
+        // min: 0,
+        // max: 9999999999,
+        // show : true,
+        // text:['High','Low'],
+        // realtime: false,
+        // calculable: true,
+        // color: ['orangered','yellow','lightskyblue']
+        precision:0,
+        //图例单个高度
+        itemHeight:80,
+        //图例单个宽度
+        itemWidth:150,
+        //图例字体大小
+        textStyle:{fontSize:70},
+        align:'left',
+        orient : 'vertical',
+
+        show : true,
+        //图例位置
+        x: '580',
+        y: '1400',
+        splitList: [
+			"COLORLIST"
+        ],
+        color: ['rgb(255,0,0)','rgb( 255,165,0)','rgb(255,255,0)','rgb(  0,128,0 )',
+        'rgb( 0,255,255)','rgb( 0,0,255)','rgb( 128,0,128)',]
+    },
+            series: [
+        {
+            name: 'World',
+            type: 'map',
+            mapType: 'world',
+            roam: true,
+            zoom:1,
+            itemStyle:{
+                emphasis:{label:{show:true}}
+            },
+            data:[
+				"COUNTRYLIST"
+            ]
+        }
+    ]
+};
+ myChart.setOption(option);
+ 
+
+
+
+
+
+</script>
+</body>
+</html>

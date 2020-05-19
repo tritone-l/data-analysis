@@ -1,0 +1,196 @@
+﻿location,val
+Algeria,112301.2147
+Luxembourg,267.4940478
+Vietnam,37312.19105
+Ghana,4987.955579
+Central African Republic,367.8939665
+Mozambique,4317.154905
+United States,187216.048
+New Zealand,1582.627442
+Saint Vincent and the Grenadines,132.4580282
+Solomon Islands,239.8802698
+Montenegro,786.8147402
+Panama,1913.945604
+Sao Tome and Principe,21.45511858
+Botswana,668.6776595
+Georgia,3713.539642
+Bhutan,114.011644
+Libya,39604.31158
+Albania,1803.510725
+France,14986.18688
+Djibouti,195.5733964
+Estonia,854.8394056
+Benin,1177.355765
+United Kingdom,24145.43873
+Malta,232.4610058
+Tunisia,23279.09238
+Malaysia,7724.537713
+Poland,44315.11852
+North Korea,6888.338941
+Eritrea,897.6706668
+Turkey,62244.74757
+Congo,1038.816453
+Germany,59475.87692
+China,427054.9599
+Bahrain,8145.964218
+Dominica,59.1681125
+Colombia,19407.51367
+Northern Mariana Islands,28.61422224
+Guinea,1241.712611
+India,635546.0083
+Suriname,345.7608241
+Guinea-Bissau,212.0876684
+Puerto Rico,4342.527367
+Andorra,27.91829922
+Brunei,798.1514875
+Trinidad and Tobago,706.0484029
+Tonga,31.01391997
+Rwanda,1281.907352
+Venezuela,16323.84601
+Lesotho,988.4965787
+Bulgaria,9773.270199
+Fiji,827.2861326
+Costa Rica,1916.265231
+Bosnia and Herzegovina,5376.208151
+Senegal,2355.466501
+"Virgin Islands, U.S.",96.386566
+Egypt,259688.1668
+Netherlands,4545.043646
+Democratic Republic of the Congo,9680.554505
+Burkina Faso,3496.192334
+American Samoa,25.69497631
+Japan,181974.571
+Morocco,62502.9743
+Dominican Republic,5964.371691
+Bermuda,45.05545991
+Sierra Leone,644.2801274
+Austria,3338.177049
+Greece,2768.223072
+Cameroon,3500.574835
+South Sudan,830.339144
+Equatorial Guinea,209.8491185
+Antigua and Barbuda,58.28059968
+Kyrgyzstan,2253.08121
+Latvia,2470.572463
+El Salvador,4115.666224
+Grenada,118.2275745
+Bolivia,9705.483629
+Vanuatu,76.08512593
+Namibia,573.8284379
+Kazakhstan,10209.46685
+Taiwan,13010.52688
+Romania,17205.23164
+Pakistan,124375.3172
+Argentina,39829.19256
+Chile,18544.71984
+Ethiopia,13130.65037
+Kiribati,78.50463988
+Brazil,204807.8818
+Serbia,13577.44853
+Iceland,67.54298637
+Norway,2018.577298
+Belgium,4594.132757
+Armenia,3453.655064
+Nepal,11013.01717
+Mongolia,1158.292849
+South Africa,39269.84468
+Togo,855.5674349
+Croatia,5540.381405
+Marshall Islands,21.02273539
+Cape Verde,68.70555954
+Slovakia,5545.199092
+Guyana,556.0108525
+The Bahamas,213.3654865
+Yemen,15606.23066
+Palestine,9929.926875
+Singapore,5473.427327
+United Arab Emirates,30595.0164
+Paraguay,15386.51078
+Maldives,95.77425094
+Swaziland,713.8215695
+Ireland,1869.829706
+Guatemala,12069.26764
+Qatar,9637.780701
+Liberia,543.3582509
+Moldova,5425.935265
+Portugal,6898.821952
+Lithuania,2488.253649
+South Korea,81142.10959
+Oman,18644.86213
+Gabon,546.5566098
+Hungary,14255.86505
+Mali,2422.480352
+Uruguay,4048.54534
+Denmark,2794.877341
+Sudan,30353.52323
+Tajikistan,3455.800379
+Saudi Arabia,63783.00882
+Iran,190236.0678
+Greenland,15.05566772
+Turkmenistan,2846.221498
+Slovenia,2464.508173
+Czech Republic,17166.40075
+Zimbabwe,3377.678001
+Australia,11193.46451
+Spain,23281.93632
+Ukraine,38901.25125
+Mexico,152860.5306
+Papua New Guinea,5407.582469
+Honduras,3830.493813
+Seychelles,36.6442414
+Iraq,139884.2916
+Haiti,4191.603462
+Barbados,127.5858939
+Russian Federation,206834.3617
+Israel,11943.49683
+Chad,1145.990593
+Myanmar,13199.30187
+Azerbaijan,8077.371739
+Finland,3223.701127
+Cyprus,803.3110245
+Italy,37967.63852
+Sri Lanka,12037.90057
+Somalia,2062.928557
+Ecuador,18838.98024
+Syria,31491.64039
+Cote d'Ivoire,3753.306138
+Philippines,30894.88911
+Peru,16345.67188
+Madagascar,3011.704303
+Tanzania,5043.689922
+Comoros,137.3401579
+Jamaica,2601.546611
+Indonesia,102203.2494
+Samoa,88.03648954
+Bangladesh,38972.54172
+Jordan,21253.56591
+Sweden,1587.775647
+Guam,89.00673734
+Uganda,3531.606091
+Mauritania,838.6002125
+Afghanistan,42407.62166
+Belarus,7998.755728
+Malawi,2484.877755
+Macedonia,3232.683451
+Burundi,486.5758127
+Laos,919.1507703
+Uzbekistan,19697.49185
+Cambodia,3406.777612
+Belize,199.04157
+Nicaragua,2566.142611
+Niger,1755.002573
+Cuba,7055.483381
+The Gambia,169.9858903
+Federated States of Micronesia,56.99845026
+Thailand,35938.62245
+Canada,15069.51825
+Kenya,3721.60346
+Switzerland,3470.83189
+Angola,3690.319578
+Saint Lucia,118.9813209
+Zambia,1741.11863
+Timor-Leste,348.7596734
+Mauritius,2306.812908
+Nigeria,17255.80732
+Kuwait,11558.60349
+Lebanon,12037.59769

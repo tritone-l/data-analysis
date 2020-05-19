@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <script src="world.js"></script>
+</head>
+<body>
+<!-- 下面是整个图的大小 -->
+<div id="main" style="width: 4800px;height:2320px;"></div>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+
+    deadData = [
+        "DEADDATA"
+    ];
+
+    //先纬度，再经度
+
+    var capitals =
+    "39.55,116.23,China\n" +
+    "37.35,127.03,Korea\n" +
+    "39,125.47,Korea (North)\n" +
+    "35.41,139.44,Japan\n" +
+    "3.08,101.42,Malaysia\n" +
+    "28.37,77.13,India\n" +
+    "33.4,73.08,Pakistan\n" +
+    "13.5,100.29,Thailand\n" +
+    "21.01,105.53,Vietnam\n" +
+    "6.55,79.52,Sri Lanka\n" +
+    "19.406,96.425,Myanmar\n" +
+    "23.51,90.24,Bangladesh\n" +
+    "27.29,89.4,Bhutan\n" +
+    "34.3,69.1,Afghanistan\n" +
+    "11.35,104.55,Cambodia\n" +
+    "27.42,85.19,Nepal\n" +
+    "18.01,102.48,Lao PDR\n" +
+    "31.47,35.13,Israel\n" +
+    "15.23,44.14,Yemen\n" +
+    "14.37,121,Philippines\n" +
+    "1.22,103.45,Singapore\n" +
+    "4.1,73.28,Maldives\n" +
+    "-8.35,125.35,Timor-Leste\n" +
+    "-6.08,106.45,Indonesia\n" +
+    "33.14,44.22,Iraq\n" +
+    "35.45,51.3,Iran\n" +
+    "31.57,35.56,Jordan\n" +
+    "24.39,46.44,Saudi Arabia\n" +
+    "24.27,54.23,United Arab Emirates\n" +
+    "23.36,58.37,Oman\n" +
+    "26.12,50.36,Bahrain\n" +
+    "33.3,36.19,Syria\n" +
+    "31.47,35.13,Palestine\n" +
+    "25.15,51.34,Qatar\n" +
+    "33.52,35.3,Lebanon\n" +
+    "47.55,106.53,Mongolia\n" +
+    "40.02,32.54,Turkey\n" +
+    "51.1,71.3,Kazakhstan\n" +
+    "41.16,69.13,Uzbekistan\n" +
+    "42.53,74.46,Kyrgyzstan\n" +
+    "38.38,68.51,Tajikistan\n" +
+    "37.58,58.24,Turkmenistan\n" +
+    "40.22,49.53,Azerbaijan\n" +
+    "41.43,44.48,Georgia\n" +
+    "35.11,33.23,Cyprus\n" +
+    "42.59,81.14,United Kingdom\n" +
+    "44.23,26.1,Romania\n" +
+    "48.51,2.2,France\n" +
+    "52.15,21,Poland\n" +
+    "46.57,7.26,Switzerland\n" +
+    "59.23,18,Sweden\n" +
+    "41.52,12.37,Italy\n" +
+    "52.31,13.2,Germany\n" +
+    "43.4,7.25,Monaco\n" +
+    "56.53,24.05,Latvia\n" +
+    "38.02,23.44,Greece\n" +
+    "41.2,19.48,Albania\n" +
+    "59.56,10.41,Norway\n" +
+    "44.49,20.28,Serbia\n" +
+    "42.43,23.2,Bulgaria\n" +
+    "59.22,24.48,Estonia\n" +
+    "54.4,25.19,Lithuania\n" +
+    "52.21,4.52,Netherlands\n" +
+    "53.26,-6.15,Ireland\n" +
+    "50.05,14.25,Czech\n" +
+    "48.09,17.07,Slovakia\n" +
+    "38.42,-9.05,Portugal\n" +
+    "46.03,14.31,Slovenia\n" +
+    "41.35,21.3,Macedonia\n" +
+    "45.49,15.58,Croatia\n" +
+    "41.54,12.27,Vatican City\n" +
+    "50.51,4.21,Belgium\n" +
+    "35.53,14.31,Malta\n" +
+    "55.43,12.34,Denmark\n" +
+    "43.52,18.26,Bosnia and Herzegovina\n" +
+    "40.26,3.42,Spain\n" +
+    "43.55,12.28,San Marino\n" +
+    "47.26,19.15,Hungary\n" +
+    "47.09,9.31,Liechtenstein\n" +
+    "64.09,-21.58,Iceland\n" +
+    "60.1,24.53,Finland\n" +
+    "55.45,37.37,Russia\n" +
+    "48.13,16.22,Austria\n" +
+    "50.28,30.29,Ukraine\n" +
+    "53.51,27.3,Belarus\n" +
+    "47,28.5,Moldova\n" +
+    "42.27,19.28,Montenegro\n" +
+    "35.11,33.23,Cyprus\n" +
+    "-8.5,13.2,Angola\n" +
+    "9.03,38.42,Ethiopia\n" +
+    "30,31.17,Egypt\n" +
+    "4.23,18.37,Central African Rep.\n" +
+    "11.52,-15.39,Guinea-Bissau\n" +
+    "-24.45,25.55,Botswana\n" +
+    "12.2,1.4,Burkina Faso\n" +
+    "-18.55,47.31,Madagascar\n" +
+    "12.4,-7.59,Mali\n" +
+    "-13.58,33.49,Malawi\n" +
+    "3.45,8.48,Equatorial Guinea\n" +
+    "13.28,-16.39,Gambia\n" +
+    "6.3,2.47,Benin\n" +
+    "-20.09,57.29,Mauritius\n" +
+    "18,-15.58,Mauritania\n" +
+    "0.19,32.35,Uganda\n" +
+    "48.25,123.21,Seychelles\n" +
+    "34.02,-6.51,Morocco\n" +
+    "-3.22,29.21,Burundi\n" +
+    "-1.59,30.05,Rwanda\n" +
+    "12.1,14.59,Chad\n" +
+    "13.32,2.05,Niger\n" +
+    "9.12,7.11,Nigeria\n" +
+    "5.33,0.15,Ghana\n" +
+    "0.3,9.25,Gabon\n" +
+    "0.2,6.44,Sao Tome and Principe\n" +
+    "-2.43,21.07,Dem. Rep. Congo\n" +
+    "6.1,1.21,Togo\n" +
+    "32.58,13.12,Libya\n" +
+    "6.2,-10.46,Liberia\n" +
+    "14.55,-23.31,Cape Verde\n" +
+    "36.42,3.13,Algeria\n" +
+    "-22.34,17.06,Namibia\n" +
+    "15.2,38.58,Eritrea\n" +
+    "26.19,31.08,Swaziland\n" +
+    "-15.2,28.14,Zambia\n" +
+    "-6.51,39.18,Tanzania\n" +
+    "1.17,36.49,Kenya\n" +
+    "11.4,43.19,Comoros\n" +
+    "-17.49,31.04,Zimbabwe\n" +
+    "36.47,10.1,Tunisia\n" +
+    "29.18,27.28,Lesotho\n" +
+    "-25.58,32.35,Mozambique\n" +
+    "2.02,45.21,Somalia\n" +
+    "6.51,5.18,Cote D’Ivoire\n" +
+    "3.51,11.31,Cameroon\n" +
+    "14.38,-17.27,Senegal\n" +
+    "38.53,-77.02,United States\n" +
+    "45.25,-75.43,Canada\n" +
+    "-12.06,-76.55,Peru\n" +
+    "18.32,-72.2,Haiti\n" +
+    "13.4,-89.1,El Salvador\n" +
+    "-33.27,-70.4,Chile\n" +
+    "23.08,-82.23,Cuba\n" +
+    "12.06,-86.18,Nicaragua\n" +
+    "25.03,-77.2,Bahamas\n" +
+    "-16.3,-68.09,Bolivia\n" +
+    "12.04,-61.44,Grenada\n" +
+    "-25.15,-57.4,Paraguay\n" +
+    "-15.45,-47.57,Brazil\n" +
+    "14.05,-87.14,Honduras\n" +
+    "-0.14,-78.3,Ecuador\n" +
+    "17.12,-77.14,Jamaica\n" +
+    "-34.53,-56.11,Uruguay\n" +
+    "13.06,-59.37,Barbados\n" +
+    "14.01,-60.59,Saint Lucia\n" +
+    "6.46,-58.1,Guyana\n" +
+    "18.3,-69.57,Dominican Rep.\n" +
+    "19.28,-99.09,Mexico\n" +
+    "-34.2,-58.3,Argentina\n" +
+    "10.3,-66.58,Venezuela\n" +
+    "45.16,66.03,Antigua and Barbuda\n" +
+    "5.52,-55.14,Suriname\n" +
+    "17.25,-88.46,Belize\n" +
+    "9.59,-84.04,Costa Rica\n" +
+    "10.38,-61.31,Trinidad and Tobago\n" +
+    "-35.18,149.08,Australia\n" +
+    "-41.17,174.47,New Zealand\n" +
+    "-18.08,178.25,Fiji\n" +
+    "21.07,175.12,Tonga\n" +
+    "-9.3,147.07,Papua New Guinea\n" +
+    "9.32,160.12,Solomon Islands\n" +
+    "7.09,171.12,Marshall Islands\n" +
+    "17.32,149.34,French Polynesia\n" +
+    "27.09,13.12,Western Sahara\n" +
+    "14.16,170.42,American Samoa\n" +
+    "4.55,52.18,Franch Guiana\n"+
+    "-25.43,28.11,South Africa\n"+
+    "8.57,-79.3,Panama\n"+
+    "4.36,-70.04,Colombia\n"
+    + "12,42.5,Djibouti\n"
+    +"64.1,-51.4,Greenland\n"
+    +"-22.17,166.30,New Caledonia\n"
+    +"15.31,32.35,Sudan\n"
+    +"-4.09,15.12,Congo\n"
+    +"18.28,-66.07,Puerto Rico\n"
+    +"14.40,-90.22,Guatemala\n"
+    +"7,30,S. Sudan\n"
+    +"8.31,-13.15,Sierra Leone\n"
+
+
+    // +"20.48486328125,-57.65126953125002,Montserrat\n"
+    ;
+
+    var capitalList= capitals.split("\n");
+    var geoCapital = {};
+    for(var i=0;i<capitalList.length;i++){
+        var c = capitalList[i].split(",");
+        geoCapital[c[2]] = [c[1],c[0]];
+    }
+
+    var mapName = 'world';
+
+    var geoCoordMap = {};
+    /*获取地图数据*/
+    myChart.showLoading();
+    var mapFeatures = echarts.getMap(mapName).geoJson.features;
+    myChart.hideLoading();
+    mapFeatures.forEach(function (v) {
+        // 地区名称
+        var name = v.properties.name;
+        // 地区经纬度
+        geoCoordMap[name] = v.properties.cp;
+
+    });
+
+
+    var max = 4000,
+        min = 0; // todo
+    var maxSize4Pin = 200,
+        minSize4Pin = 50;
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value),
+                });
+            }else {
+                var g = geoCapital[data[i].name];
+                if(g){
+                    res.push({
+                        name: data[i].name,
+                        value: g.concat(data[i].value)
+                    });
+                }
+            }
+        }
+        return res;
+    };
+
+    option = {
+        title: {
+            sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+            left: 'center',
+            top: 'top'
+        },
+        textStyle: {
+            fontFamily: "Times New Roman"
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: function (params) {
+                var value = (params.value + '').split('.');
+                value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+                    + '.' + value[1];
+                return params.seriesName + '<br/>' + params.name + ' : ' + value;
+            }
+        },
+        toolbox: {
+            show: true,
+            orient: 'horizontal',
+            left: 'right',
+            top: 'top',
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                restore: {show: true},
+                saveAsImage: {
+                    // type:'png',
+                    show: true,
+                    pixelRatio: 4
+                }
+            }
+        },
+        visualMap: {
+            // min: 0,
+            // max: 9999999999,
+            // show : true,
+            // text:['High','Low'],
+            // realtime: false,
+            // calculable: true,
+            // color: ['orangered','yellow','lightskyblue']
+            precision: 0,
+            //图例单个高度
+            itemHeight: 80,
+            //图例单个宽度
+            itemWidth: 150,
+            //图例字体大小
+            textStyle: {fontSize: 70},
+            align: 'left',
+            orient: 'vertical',
+
+            show: true,
+            //图例位置
+            x: '580',
+            y: '1400',
+            splitList: [
+                // {start: 0, end:500},{start: 500, end: 1000},
+                // {start: 1000, end:1500},{start: 1500, end: 2000},{start: 2000, end: 2500},
+                // {start: 2500, end: 3000},{start: 3500, end: 5000000},
+                // {start: 5000000, end: 200000},
+{start: 0, end:0},{start: 1, end:9},{start: 10, end:99},{start: 100, end:499},{start: 500, end:999},{start: 1000, end:4999},{start: 5000, end:400000},
+            ],
+            //color: ['orangered','yellow','lightskyblue']
+             color: ['#7f1100',
+                    '#ff5428',
+                    '#ff8c71',
+                    '#ffd768',
+                    'rgb(240, 214, 173)',
+                    'rgb(238,238,238)']
+
+            ,
+            seriesIndex: [1]
+        },
+        geo: {
+            show: true,
+            map: mapName,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#939998',
+                    borderColor: '#3B5077'
+                },
+                emphasis: {
+                    areaColor: '#2B91B7'
+                }
+            }
+        },
+        series: [
+            {
+                name: '散点',
+                type: 'scatter',
+                symbol: 'pin',
+                coordinateSystem: 'geo',
+                data: convertData(deadData),
+                symbolSize: function (val) {
+                    var a = maxSize4Pin/ max;
+
+                    console.log(val);
+                    console.log(val[0]+" "+val[2]+" "+a * val[2]);
+                    var size = a * val[2]+minSize4Pin;
+
+                    if(size>maxSize4Pin){
+                        return maxSize4Pin;
+                    }
+                    if(size<=minSize4Pin){
+                        return minSize4Pin;
+                    }
+
+
+                    return size;
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        textStyle: {
+                            color: '#ffffff',
+                            fontSize: 20
+                        },
+                        formatter:function (val) {
+                            return val.data.value[2]
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#6b78f0'
+                    }
+                }
+            },
+            {
+                name: 'World',
+                type: 'map',
+                mapType: mapName,
+                roam: true,
+                zoom: 1,
+                itemStyle: {
+                    emphasis: {label: {show: true}}
+                },
+                data: [
+                    "ALLDATA"
+                ]
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <script src="world.js"></script>
+</head>
+<body>
+<!-- 下面是整个图的大小 -->
+<div id="main" style="width: 4800px;height:2320px;"></div>
+<script>
+	 var myChart = echarts.init(document.getElementById('main'));
+		option = {
+    title: {
+        sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+        left: 'center',
+        top: 'top'
+    },
+    textStyle:{
+            fontFamily:"Times New Roman"
+        },
+    tooltip: {
+        trigger: 'item',
+        formatter: function (params) {
+            var value = (params.value + '').split('.');
+            value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,')
+                    + '.' + value[1];
+            return params.seriesName + '<br/>' + params.name + ' : ' + value;
+        }
+    },
+   toolbox: {
+    show : true,
+    orient : 'horizontal',
+    left: 'right',
+    top: 'top',
+    feature : {
+        mark : {show: true},
+        dataView : {show: true, readOnly: false},
+        restore : {show: true},
+        saveAsImage : {
+          // type:'png',
+            show: true,
+            pixelRatio:4
+        }
+    }
+},
+    visualMap: {
+        // min: 0,
+        // max: 9999999999,
+        // show : true,
+        // text:['High','Low'],
+        // realtime: false,
+        // calculable: true,
+        // color: ['orangered','yellow','lightskyblue']
+        precision:0,
+        //图例单个高度
+        itemHeight:80,
+        //图例单个宽度
+        itemWidth:150,
+        //图例字体大小
+        textStyle:{fontSize:70},
+        align:'left',
+        orient : 'vertical',
+
+        show : true,
+        //图例位置
+        x: '580',
+        y: '1400',
+        splitList: [
+			{start: -3, end:-2},{start: 239.8802698, end:1145.990593},{start: 1145.990593, end:2794.877341},{start: 2794.877341, end:4987.955579},{start: 4987.955579, end:12037.59769},{start: 12037.59769, end:30894.88911},{start: 30894.88911, end:635546.0083},
+        ],
+        color: ['rgb(255,0,0)','rgb( 255,165,0)','rgb(255,255,0)','rgb(  0,128,0 )',
+        'rgb( 0,255,255)','rgb( 0,0,255)','rgb( 128,0,128)','rgb( 238,238,238)',]
+    },
+            series: [
+        {
+            name: 'World',
+            type: 'map',
+            mapType: 'world',
+            roam: true,
+            zoom:1,
+            itemStyle:{
+                emphasis:{label:{show:true}}
+            },
+            data:[
+				{name: "Algeria", value: 112301.2147},
+{name: "Luxembourg", value: 267.4940478},
+{name: "Vietnam", value: 37312.19105},
+{name: "Ghana", value: 4987.955579},
+{name: "Central African Rep.", value: 367.8939665},
+{name: "Mozambique", value: 4317.154905},
+{name: "United States", value: 187216.048},
+{name: "New Zealand", value: 1582.627442},
+{name: "St. Vin. and Gren.", value: 132.4580282},
+{name: "Solomon Is.", value: 239.8802698},
+{name: "Montenegro", value: 786.8147402},
+{name: "Panama", value: 1913.945604},
+{name: "Botswana", value: 668.6776595},
+{name: "Georgia", value: 3713.539642},
+{name: "Bhutan", value: 114.011644},
+{name: "Libya", value: 39604.31158},
+{name: "Albania", value: 1803.510725},
+{name: "France", value: 14986.18688},
+{name: "Djibouti", value: 195.5733964},
+{name: "Estonia", value: 854.8394056},
+{name: "Benin", value: 1177.355765},
+{name: "United Kingdom", value: 24145.43873},
+{name: "Malta", value: 232.4610058},
+{name: "Tunisia", value: 23279.09238},
+{name: "Malaysia", value: 7724.537713},
+{name: "Poland", value: 44315.11852},
+{name: "Dem. Rep. Korea", value: 6888.338941},
+{name: "Eritrea", value: 897.6706668},
+{name: "Turkey", value: 62244.74757},
+{name: "Congo", value: 1038.816453},
+{name: "Germany", value: 59475.87692},
+{name: "China", value: 427054.9599},
+{name: "Bahrain", value: 8145.964218},
+{name: "Dominica", value: 59.1681125},
+{name: "Colombia", value: 19407.51367},
+{name: "Guinea", value: 1241.712611},
+{name: "India", value: 635546.0083},
+{name: "Suriname", value: 345.7608241},
+{name: "Guinea-Bissau", value: 212.0876684},
+{name: "Puerto Rico", value: 4342.527367},
+{name: "Andorra", value: 27.91829922},
+{name: "Brunei", value: 798.1514875},
+{name: "Trinidad and Tobago", value: 706.0484029},
+{name: "Tonga", value: 31.01391997},
+{name: "Rwanda", value: 1281.907352},
+{name: "Venezuela", value: 16323.84601},
+{name: "Lesotho", value: 988.4965787},
+{name: "Bulgaria", value: 9773.270199},
+{name: "Fiji", value: 827.2861326},
+{name: "Costa Rica", value: 1916.265231},
+{name: "Bosnia and Herz.", value: 5376.208151},
+{name: "Senegal", value: 2355.466501},
+{name: "U.S. Virgin Is.", value: 96.386566},
+{name: "Egypt", value: 259688.1668},
+{name: "Netherlands", value: 4545.043646},
+{name: "Dem. Rep. Congo", value: 9680.554505},
+{name: "Burkina Faso", value: 3496.192334},
+{name: "American Samoa", value: 25.69497631},
+{name: "Japan", value: 181974.571},
+{name: "Morocco", value: 62502.9743},
+{name: "Dominican Rep.", value: 5964.371691},
+{name: "Bermuda", value: 45.05545991},
+{name: "Sierra Leone", value: 644.2801274},
+{name: "Austria", value: 3338.177049},
+{name: "Greece", value: 2768.223072},
+{name: "Cameroon", value: 3500.574835},
+{name: "S. Sudan", value: 830.339144},
+{name: "Eq. Guinea", value: 209.8491185},
+{name: "Antigua and Barb.", value: 58.28059968},
+{name: "Kyrgyzstan", value: 2253.08121},
+{name: "Latvia", value: 2470.572463},
+{name: "El Salvador", value: 4115.666224},
+{name: "Grenada", value: 118.2275745},
+{name: "Bolivia", value: 9705.483629},
+{name: "Vanuatu", value: 76.08512593},
+{name: "Namibia", value: 573.8284379},
+{name: "Kazakhstan", value: 10209.46685},
+{name: "Romania", value: 17205.23164},
+{name: "Pakistan", value: 124375.3172},
+{name: "Argentina", value: 39829.19256},
+{name: "Chile", value: 18544.71984},
+{name: "Ethiopia", value: 13130.65037},
+{name: "Kiribati", value: 78.50463988},
+{name: "Brazil", value: 204807.8818},
+{name: "Serbia", value: 13577.44853},
+{name: "Iceland", value: 67.54298637},
+{name: "Norway", value: 2018.577298},
+{name: "Belgium", value: 4594.132757},
+{name: "Armenia", value: 3453.655064},
+{name: "Nepal", value: 11013.01717},
+{name: "Mongolia", value: 1158.292849},
+{name: "South Africa", value: 39269.84468},
+{name: "Togo", value: 855.5674349},
+{name: "Croatia", value: 5540.381405},
+{name: "Cape Verde", value: 68.70555954},
+{name: "Slovakia", value: 5545.199092},
+{name: "Guyana", value: 556.0108525},
+{name: "Yemen", value: 15606.23066},
+{name: "Palestine", value: 9929.926875},
+{name: "Singapore", value: 5473.427327},
+{name: "United Arab Emirates", value: 30595.0164},
+{name: "Paraguay", value: 15386.51078},
+{name: "Swaziland", value: 713.8215695},
+{name: "Ireland", value: 1869.829706},
+{name: "Guatemala", value: 12069.26764},
+{name: "Qatar", value: 9637.780701},
+{name: "Liberia", value: 543.3582509},
+{name: "Moldova", value: 5425.935265},
+{name: "Portugal", value: 6898.821952},
+{name: "Lithuania", value: 2488.253649},
+{name: "Korea", value: 81142.10959},
+{name: "Oman", value: 18644.86213},
+{name: "Gabon", value: 546.5566098},
+{name: "Hungary", value: 14255.86505},
+{name: "Mali", value: 2422.480352},
+{name: "Uruguay", value: 4048.54534},
+{name: "Denmark", value: 2794.877341},
+{name: "Sudan", value: 30353.52323},
+{name: "Tajikistan", value: 3455.800379},
+{name: "Saudi Arabia", value: 63783.00882},
+{name: "Iran", value: 190236.0678},
+{name: "Greenland", value: 15.05566772},
+{name: "Turkmenistan", value: 2846.221498},
+{name: "Slovenia", value: 2464.508173},
+{name: "Zimbabwe", value: 3377.678001},
+{name: "Australia", value: 11193.46451},
+{name: "Spain", value: 23281.93632},
+{name: "Ukraine", value: 38901.25125},
+{name: "Mexico", value: 152860.5306},
+{name: "Papua New Guinea", value: 5407.582469},
+{name: "Honduras", value: 3830.493813},
+{name: "Seychelles", value: 36.6442414},
+{name: "Iraq", value: 139884.2916},
+{name: "Haiti", value: 4191.603462},
+{name: "Barbados", value: 127.5858939},
+{name: "Russia", value: 206834.3617},
+{name: "Israel", value: 11943.49683},
+{name: "Chad", value: 1145.990593},
+{name: "Myanmar", value: 13199.30187},
+{name: "Azerbaijan", value: 8077.371739},
+{name: "Finland", value: 3223.701127},
+{name: "Cyprus", value: 803.3110245},
+{name: "Italy", value: 37967.63852},
+{name: "Sri Lanka", value: 12037.90057},
+{name: "Somalia", value: 2062.928557},
+{name: "Ecuador", value: 18838.98024},
+{name: "Syria", value: 31491.64039},
+{name: "Cote d'Ivoire", value: 3753.306138},
+{name: "Philippines", value: 30894.88911},
+{name: "Peru", value: 16345.67188},
+{name: "Madagascar", value: 3011.704303},
+{name: "Tanzania", value: 5043.689922},
+{name: "Comoros", value: 137.3401579},
+{name: "Jamaica", value: 2601.546611},
+{name: "Indonesia", value: 102203.2494},
+{name: "Samoa", value: 88.03648954},
+{name: "Bangladesh", value: 38972.54172},
+{name: "Jordan", value: 21253.56591},
+{name: "Sweden", value: 1587.775647},
+{name: "Guam", value: 89.00673734},
+{name: "Uganda", value: 3531.606091},
+{name: "Mauritania", value: 838.6002125},
+{name: "Afghanistan", value: 42407.62166},
+{name: "Belarus", value: 7998.755728},
+{name: "Malawi", value: 2484.877755},
+{name: "Macedonia", value: 3232.683451},
+{name: "Burundi", value: 486.5758127},
+{name: "Lao PDR", value: 919.1507703},
+{name: "Uzbekistan", value: 19697.49185},
+{name: "Cambodia", value: 3406.777612},
+{name: "Belize", value: 199.04157},
+{name: "Nicaragua", value: 2566.142611},
+{name: "Niger", value: 1755.002573},
+{name: "Cuba", value: 7055.483381},
+{name: "Thailand", value: 35938.62245},
+{name: "Canada", value: 15069.51825},
+{name: "Kenya", value: 3721.60346},
+{name: "Switzerland", value: 3470.83189},
+{name: "Angola", value: 3690.319578},
+{name: "Saint Lucia", value: 118.9813209},
+{name: "Zambia", value: 1741.11863},
+{name: "Timor-Leste", value: 348.7596734},
+{name: "Mauritius", value: 2306.812908},
+{name: "Nigeria", value: 17255.80732},
+{name: "Kuwait", value: 11558.60349},
+{name: "Lebanon", value: 12037.59769},
+
+            ]
+        }
+    ]
+};
+ myChart.setOption(option);
+ 
+
+
+
+
+
+</script>
+</body>
+</html>

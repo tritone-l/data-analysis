@@ -1,0 +1,5 @@
+confirmed number
+{ start: 0, end: 0 }, { start: 1, end: 9 }, { start: 10, end: 99 }, { start: 100, end: 999 }, { start: 1000, end: 9999 },{ start: 10000, end: 100000 },
+
+Death number
+{ start: 0, end: 0 }, { start: 1, end: 9 }, { start: 10, end: 49 }, { start: 49, end: 99 }, { start: 100, end: 1000 },{ start: 1000, end: 10000 },

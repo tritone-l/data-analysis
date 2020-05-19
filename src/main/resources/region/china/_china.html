@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+    <script src="china.js"></script>
+</head>
+
+<body>
+    <!-- 下面是整个图的大小 -->
+    <div id="main" style="width: 1200px;height:1200px;"></div>
+    <script>
+
+        var myChart = echarts.init(document.getElementById('main'));
+
+
+        window.dataList = ["XDATA"];
+
+        option = {
+            tooltip: {
+                triggerOn: "click",
+                formatter: function (e, t, n) {
+                    return .5 == e.value ? e.name + "：有疑似病例" : e.seriesName + "<br />" + e.name + "：" + e.value
+                }
+            },
+            toolbox: {
+                show: true,
+                orient: 'horizontal',
+                left: 'right',
+                top: 'top',
+                feature: {
+                    mark: { show: true },
+                    dataView: { show: true, readOnly: false },
+                    restore: { show: true },
+                    saveAsImage: {
+                        // type:'png',
+                        show: true,
+                        pixelRatio: 4
+                    }
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 1000,
+                left: 26,
+                bottom: 250,
+                showLabel: !0,
+                precision: 0,
+                //图例单个高度
+                itemHeight: 30,
+                //图例单个宽度
+                itemWidth: 50,
+                //图例字体大小
+                textStyle: { fontSize: 20 },
+                text: ["High", "Low"],
+                splitList: [
+
+{ start: 0, end: 0 }, { start: 1, end: 9 }, { start: 10, end: 99 }, { start: 100, end: 999 }, { start: 1000, end: 9999 },{ start: 10000, end: 100000 },
+                ],
+                color: ['#7f1100', '#ff5428', '#ff8c71', '#ffd768','rgb(240, 214, 173)','rgb(238,238,238)',]
+                , 
+                // pieces: [{
+                //     gt: 100,
+                //     label: "> 100 ",
+                //     color: "#7f1100"
+                // }, {
+                //     gte: 10,
+                //     lte: 100,
+                //     label: "10 - 100 ",
+                //     color: "#ff5428"
+                // }, {
+                //     gte: 1,
+                //     lt: 10,
+                //     label: "1 - 9 ",
+                //     color: "#ff8c71"
+                // }, {
+                //     gte: 0,
+                //     lt: 1,
+                //     label: "0-1",
+                //     color: "#ffd768"
+                // }, {
+                //     value: 0,
+                //     color: 'rgb(238,238,238)'
+                // }],
+                show: !0
+            }
+            ,
+            geo: {
+                map: "china",
+                roam: !1,
+                scaleLimit: {
+                    min: 1,
+                    max: 2
+                },
+                zoom: 1.23,
+                top: 120,
+                label: {
+                    normal: {
+                        show: !0,
+                        fontSize: "14",
+                        color: "rgba(0,0,0,0.7)"
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        //shadowBlur: 50,
+                        //shadowColor: 'rgba(0, 0, 0, 0.2)',
+                        borderColor: "rgba(0, 0, 0, 0.2)"
+                    },
+                    emphasis: {
+                        areaColor: "#f2d5ad",
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        borderWidth: 0
+                    }
+                }
+            },
+            series: [{
+                name: "确诊病例",
+                type: "map",
+                geoIndex: 0,
+                data: window.dataList
+            }]
+        };
+
+        myChart.setOption(option);
+
+    </script>
+
+</body>
+
+</html>

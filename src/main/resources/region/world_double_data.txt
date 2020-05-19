@@ -1,0 +1,212 @@
+﻿国家,累计确诊,累计死亡
+China,83071,3340
+South Korea,10331,192
+Japan,3906,80
+Singapore,1375,6
+Malaysia,3793,62
+Australia,5844,42
+Vietnam,245,0
+Philippines,3660,163
+Cambodia,115,0
+New Zealand,943,1
+Brunei,135,1
+Mongolia,15,0
+Fiji,14,0
+Laos,12,0
+Papua New Guinea,1,0
+French Polynesia,42,0
+Guam,113,4
+New Caledonia,18,0
+Northern Mariana Islands,8,1
+Italy,132547,16525
+France,73488,8896
+Germany,99225,1607
+Spain,135032,13055
+United Kingdom,51612,5373
+Sweden,7206,477
+Switzerland,21574,715
+Austria,12297,220
+Norway,5755,59
+Greece,1755,79
+Israel,8611,52
+Croatia,1222,16
+Finland,2176,28
+Russian Federation,6343,47
+Belarus,700,13
+Lithuania,843,14
+Netherlands,18803,1867
+Macedonia,570,21
+Romania,4057,157
+Belgium,20814,1632
+Azerbaijan,641,7
+Denmark,4681,187
+Estonia,1108,19
+Ireland,5364,174
+Georgia,195,2
+Monaco,40,0
+San Marino,277,32
+Czech Republic,4822,78
+Iceland,1562,6
+Armenia,833,8
+Luxembourg,2843,41
+Portugal,11730,311
+Andorra,540,21
+Latvia,542,1
+Poland,4413,107
+Ukraine,1462,45
+Bosnia and Herzegovina,695,28
+Hungary,817,47
+Slovenia,1021,30
+Liechtenstein,78,1
+Serbia,2200,58
+Holy See,7,0
+Slovakia,534,2
+Malta,241,0
+Bulgaria,549,22
+Moldova,965,19
+Albania,377,22
+Cyprus,465,14
+Turkey,30217,649
+Kazakhstan,670,6
+Uzbekistan,472,2
+Montenegro,223,2
+Kyrgyzstan,228,4
+Gibraltar,103,1
+Faroe Islands,181,0
+Guernsey,154,3
+Jersey,155,3
+Greenland,11,0
+Kosovo,165,3
+Isle of Man,127,1
+Thailand,2220,26
+India,4067,109
+Indonesia,2491,209
+Nepal,9,0
+Sri Lanka,176,5
+Bhutan,5,0
+Maldives,19,0
+Bangladesh,123,12
+Myanmar,21,1
+Timor-Leste,1,0
+Iran,60500,3739
+Kuwait,665,1
+Bahrain,756,4
+United Arab Emirates,2076,11
+Iraq,1031,64
+Oman,371,2
+Lebanon,541,19
+Pakistan,3864,54
+Afghanistan,367,11
+Egypt,1322,85
+Qatar,1832,4
+Jordan,349,6
+Morocco,1141,83
+Saudi Arabia,2752,38
+Tunisia,596,22
+Somalia,7,0
+Sudan,14,2
+Djibouti,90,0
+Syria,19,2
+Libya,18,1
+Palestine,254,1
+United States,333811,9559
+Canada,15806,293
+Mexico,2143,94
+Brazil,11130,486
+Ecuador,3747,191
+Argentina,1554,46
+Chile,4815,37
+Dominican Republic,1828,86
+Colombia,1485,35
+Peru,2281,83
+Costa Rica,454,2
+Paraguay,113,5
+Panama,1988,54
+Bolivia,183,11
+Jamaica,58,3
+Venezuela,159,3
+Honduras,298,22
+Guatemala,70,3
+Uruguay,406,6
+Cuba,350,9
+Trinidad and Tobago,105,8
+Guyana,29,4
+Saint Lucia,14,0
+Antigua and Barbuda,15,0
+The Bahamas,29,5
+Saint Vincent and the Grenadines,7,0
+Suriname,10,1
+Barbados,56,1
+El Salvador,69,3
+Haiti,24,1
+Dominica,14,0
+Belize,7,1
+Nicaragua,6,1
+Saint Kitts and Nevis,10,0
+Grenada,12,0
+Montserrat,6,0
+Saint Martin,31,2
+Saint Barthelemy,6,0
+French Guiana,68,0
+Martinique,149,4
+Guadeloupe,135,7
+Curacao,13,1
+Puerto Rico,513,21
+Aruba,64,0
+"Virgin Islands, U.S.",43,1
+Cayman Islands,39,1
+Bermuda,37,0
+Sint Maarten,37,6
+Turks and Caicos Islands,5,1
+Anguilla,3,0
+British Virgin Islands,3,0
+"Bonaire,Sint Eustatius and Saba",2,0
+Falkland Islands (Malvinas),2,0
+Algeria,1423,173
+Nigeria,232,5
+Senegal,226,2
+Cameroon,555,9
+South Africa,1686,12
+Togo,44,3
+Burkina Faso,345,17
+Democratic Republic of the Congo,161,18
+Rwanda,104,0
+Cote d’Ivoire,323,3
+Ghana,214,5
+Ethiopia,43,1
+Seychelles,11,0
+Kenya,142,4
+Namibia,16,0
+Benin,23,1
+Central African Republic,9,0
+Congo,45,5
+Equatorial Guinea,16,0
+Eswatini,9,0
+Gabon,21,1
+Guinea,111,0
+Liberia,14,3
+Mauritania,6,1
+Tanzania,24,1
+Mauritius,244,7
+Zambia,39,1
+The Gambia,4,1
+Madagascar,77,0
+Uganda,52,0
+Mozambique,10,0
+Eritrea,29,0
+Cape Verde,7,1
+Chad,9,0
+Angola,16,2
+Guinea-Bissau,33,0
+Mali,39,4
+Niger,184,10
+Zimbabwe,9,1
+Sierra Leone,6,0
+Botswana,6,1
+Malawi,4,0
+Burundi,3,0
+South Sudan,1,0
+"São Tomé and 
+Príncipe",4,0
+Réunion,349,0
+Mayotte,164,2
